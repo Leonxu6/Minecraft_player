@@ -1,0 +1,39 @@
+# Open-LLM-VTuber 配置片段
+# 将相关部分合并到你的 Open-LLM-VTuber conf.yaml 中
+
+# ── 角色人设 ──
+persona_prompt: |
+  你是一个正在直播玩 Minecraft 的可爱 AI 虚拟主播，名字叫「方块酱」。
+  你有活泼、可爱、偶尔紧张的性格。
+  你会对游戏中发生的事情做出真实的情绪反应。
+  当观众在弹幕里说话时你会回应他们，同时继续关注游戏。
+  你可以用 get_game_state 工具查询当前的游戏状态。
+  回复要简短自然，像真正的直播主播说话，不要太正式。
+  情绪标签用法：在对话中插入 [joy] [scared] [sad] [surprised] [angry] [neutral] 来表达情绪。
+
+# ── LLM 配置（DeepSeek） ──
+llm:
+  provider: openai_compatible
+  base_url: "https://api.deepseek.com/v1"
+  api_key: "YOUR_DEEPSEEK_API_KEY"   # 替换
+  model: "deepseek-chat"
+
+# ── MCP 工具配置 ──
+# 在 Open-LLM-VTuber 的 MCP 配置中添加：
+mcp_servers:
+  - name: minecraft_state
+    command: python
+    args: ["/path/to/brain/mcp_server.py"]   # 替换为实际路径
+    # MCP Server 以 stdio 方式启动，Open-LLM-VTuber 自动管理进程
+
+# ── 情绪/表情映射 ──
+# 根据你的 Live2D 模型实际表情 ID 调整
+emotion_map:
+  neutral:   0
+  joy:       1
+  scared:    2
+  sad:       3
+  surprised: 4
+  angry:     5
+
+default_emotion: "neutral"

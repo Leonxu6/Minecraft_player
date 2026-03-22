@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:mineflayer.prismarine.js.org)",
+      "WebSearch",
+      "WebFetch(domain:docs.llmvtuber.com)",
+      "WebFetch(domain:deepwiki.com)",
+      "Bash(npm --version)",
+      "Bash(npm install:*)",
+      "Bash(python3 -m venv .venv)",
+      "Bash(.venv/bin/pip install:*)",
+      "Bash(.venv/bin/pip list:*)",
+      "Bash(pip install:*)",
+      "Bash(pip3 install:*)",
+      "Bash(uv sync:*)",
+      "Bash(uv run:*)",
+      "Bash(.venv/bin/python -c \":*)",
+      "Bash(node:*)",
+      "Bash(pkill -f \"node bot_server.js\")",
+      "Bash(timeout 4 .venv/bin/python -c \":*)",
+      "Bash(head -20 grep -o \"getElementById\\\\|querySelector\\\\|canvas\\\\|live2d\\\\|sidebar\\\\|chatbox\\\\|toolbar\" /Users/leon/project/Open-LLM-VTuber/frontend/assets/main-nu7uwxNJ.js)",
+      "WebFetch(domain:docs.langchain.com)",
+      "WebFetch(domain:python.langchain.com)",
+      "WebFetch(domain:reference.langchain.com)",
+      "WebFetch(domain:medium.com)"
+    ]
+  }
+}
