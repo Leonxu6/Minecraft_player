@@ -7,6 +7,7 @@
 """
 import asyncio
 import json
+import os
 import re
 
 from langchain_openai import ChatOpenAI
@@ -20,7 +21,7 @@ from shared_state import state as shared_state
 # LLM
 # ─────────────────────────────────────────────
 llm = ChatOpenAI(
-    api_key="sk-ab32a70742d240a98693b34aeac4566c",
+    api_key=os.environ["DEEPSEEK_API_KEY"],
     base_url="https://api.deepseek.com/v1",
     model="deepseek-chat",
     temperature=0.8,

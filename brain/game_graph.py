@@ -5,6 +5,7 @@ Game Brain：LangGraph ReAct 架构
 - 图执行直到 LLM 不再调用工具（目标完成）
 """
 import asyncio
+import os
 from typing import Annotated
 
 from langchain_core.messages import SystemMessage, HumanMessage, BaseMessage
@@ -21,7 +22,7 @@ from skills import ALL_TOOLS
 # LLM：DeepSeek（OpenAI 兼容）
 # ─────────────────────────────────────────────
 llm = ChatOpenAI(
-    api_key="sk-ab32a70742d240a98693b34aeac4566c",
+    api_key=os.environ["DEEPSEEK_API_KEY"],
     base_url="https://api.deepseek.com/v1",
     model="deepseek-chat",
     temperature=0.1,

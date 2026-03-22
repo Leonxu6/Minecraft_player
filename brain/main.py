@@ -2,6 +2,8 @@
 入口：启动游戏 AI + 情绪脑
 """
 import asyncio
+from dotenv import load_dotenv
+load_dotenv()  # 读取 brain/.env
 from bot_client import state_listener, ping
 from game_graph import GameBrain
 from interaction_brain import InteractionBrain
